@@ -12,7 +12,8 @@ const EMISSION_FACTORS: Record<string, Record<string, number>> = {
   Waste: { recycled: -0.5, landfill: 0.6 },
 };
 
-const API_URL = 'http://localhost:8000/api/activities/';
+// const API_URL = 'http://localhost:8000/api/activities/';
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/activities/`;
 
 export default function LogActivity() {
   const router = useRouter();
