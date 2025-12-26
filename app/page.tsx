@@ -1,9 +1,13 @@
 import DashboardClient from './components/DashboardClient';
 
 async function getActivities() {
-  const res = await fetch('http://localhost:8000/api/activities/', {
-    cache: 'no-store', // Always fresh data
-  });
+  // const res = await fetch('http://localhost:8000/api/activities/', {
+  //   cache: 'no-store', // Always fresh data
+  // });
+  const res = await fetch(
+    `${process.env.API_URL}/api/activities/`,
+    { cache: 'no-store' }
+  );
   if (!res.ok) throw new Error('Failed to fetch');
   return res.json();
 }
